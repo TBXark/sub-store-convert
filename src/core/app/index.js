@@ -1,5 +1,10 @@
-export default new Proxy({}, {
-    apply: function(target, thisArg, argumentsList) {
-      console.log(`Function called with arguments: ${argumentsList.join(', ')}`);
-    }
-})
+export default new Proxy(console, {
+  get: function(target, prop) {
+      if (prop in target) {
+          return target[prop];
+      }
+      return function() {
+          return undefined;
+      };
+  }
+});
