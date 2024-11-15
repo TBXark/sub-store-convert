@@ -1,0 +1,27 @@
+{
+  "name": "sub-store-convert",
+  "version": "2.14.417",
+  "description": "Advanced Subscription Manager for QX, Loon, Surge, Stash and ShadowRocket.",
+  "module": "./build/index.js",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./build/index.js"
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.config.js"
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "ip-address": "^9.0.5",
+    "js-base64": "^3.7.7",
+    "lodash": "^4.17.21",
+    "peggy": "^4.0.3"
+  },
+  "devDependencies": {
+    "esbuild": "^0.24.0"
+  }
+}
