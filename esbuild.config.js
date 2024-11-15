@@ -3,15 +3,6 @@ import fs from 'node:fs';
 
 const dependenciesLoader = (path) => Object.keys(JSON.parse(fs.readFileSync(path).toString()).dependencies)
 
-const replaceImportPlugin = {
-  name: 'replace-import',
-  setup(build) {
-    build.onResolve({ filter: /^@\/core\/app$/ }, args => {
-      return { path: './app.js' };
-    });
-  }
-};
-
 esbuild.build({
   entryPoints: ['src/index.js'],
   target: 'esnext',
