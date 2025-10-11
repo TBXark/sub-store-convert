@@ -1,0 +1,29 @@
+{
+  "name": "@sub-store/core",
+  "version": "2.20.29",
+  "description": "Advanced Subscription Converter for QX, Loon, Surge, Stash and ShadowRocket.",
+  "module": "./build/index.js",
+  "main": "./build/index.js",
+  "type": "module",
+  "license": "MIT",
+  "exports": {
+    ".": {
+      "import": "./build/index.js"
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.config.js"
+  },
+  "files": [
+    "build"
+  ],
+  "dependencies": {
+    "ip-address": "^9.0.5",
+    "js-base64": "^3.7.7",
+    "lodash": "^4.17.21",
+    "peggy": "^4.0.3",
+    "json5": "^2.2.3",
+    "static-js-yaml": "^1.0.0",
+    "automerge": "0.14.2"
+  }
+}

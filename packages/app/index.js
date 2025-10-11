@@ -1,4 +1,7 @@
-import { parsers, produce } from "sub-store-convert"
+import { Hono } from 'hono'
+import { parsers, produce } from "@sub-store/core"
+
+const app = new Hono()
 
 function loadProducer(target) {
     const t = target.toLowerCase()
@@ -29,9 +32,7 @@ async function loadRemoteData(url) {
     }
 }
 
-
-
-export async function convert(url, target, opts) {
+async function convert(url, target, opts) {
     const producer = loadProducer(target)
     if (!producer) {
         throw new Error(`Unknown target: ${target}`)
@@ -74,38 +75,25 @@ export async function convert(url, target, opts) {
     }
 }
 
+app.get('/', (c) => {
+    return c.redirect('https://github.com/TBXark/sub-store-convert', 302)
+})
 
-export default {
-    async fetch(request) {
-        const uri = new URL(request.url)
-        switch (uri.pathname) {
-            case "/":
-                return new Response(null, {
-                    status: 302,
-                    headers: {
-                        "Location": "https://github.com/TBXark/sub-workers"
-                    }
-                })
-            case "/sub":
-                const opts = {}
-                uri.searchParams.forEach((value, key) => {
-                    opts[key] = value
-                })
-                const target = opts.target
-                const url = opts.url
-                if (!target || !url) {
-                    return new Response('Missing target or url', { status: 400 })
-                }
-                delete opts.target
-                delete opts.url
-                try {
-                    const res = await convert(url, target, opts)
-                    return new Response(res, { status: 200 })
-                } catch (e) {
-                    return new Response(e.message, { status: 500 })
-                }
-            default:
-                return new Response('Not Found', { status: 404 })
-        }
+app.get('/sub', async (c) => {
+    const opts = c.req.query()
+    const target = opts.target
+    const url = opts.url
+    if (!target || !url) {
+        return c.text('Missing target or url', 400)
     }
-}
+    delete opts.target
+    delete opts.url
+    try {
+        const res = await convert(url, target, opts)
+        return c.text(res, 200)
+    } catch (e) {
+        return c.text(e.message, 500)
+    }
+})
+
+export default app

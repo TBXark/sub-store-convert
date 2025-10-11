@@ -1,0 +1,15 @@
+{
+  "name": "@sub-store/app",
+  "version": "1.0.0",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "start": "bun server.js",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.12.0",
+    "hono": "^4.5.1",
+    "@sub-store/core": "workspace:*"
+  }
+}
