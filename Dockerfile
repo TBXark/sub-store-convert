@@ -1,9 +1,10 @@
-FROM node:22-alpine
+FROM node:22-alpine AS build
 
 WORKDIR /app
 
 ENV PNPM_HOME=/root/.local/share/pnpm
 ENV PATH=${PNPM_HOME}:${PATH}
+ENV CI=true
 
 RUN corepack enable
 
@@ -11,10 +12,25 @@ COPY pnpm-workspace.yaml pnpm-lock.yaml package.json ./
 COPY packages/app/package.json packages/app/
 COPY packages/core/package.json packages/core/
 
-RUN pnpm install --frozen-lockfile --prod
+RUN pnpm install --frozen-lockfile
 
-COPY . .
+COPY packages ./packages
+
+RUN pnpm --filter @sub-store/core build
+
+FROM oven/bun:1-alpine
+
+WORKDIR /app
+
+ENV NODE_ENV=production
+
+COPY --from=build /app/node_modules ./node_modules
+COPY --from=build /app/package.json ./package.json
+COPY --from=build /app/pnpm-lock.yaml ./pnpm-lock.yaml
+COPY --from=build /app/pnpm-workspace.yaml ./pnpm-workspace.yaml
+
+COPY --from=build /app/packages ./packages
 
 EXPOSE 3000
 
-CMD ["pnpm", "run", "start"]
+CMD ["bun", "./packages/app/server.js"]

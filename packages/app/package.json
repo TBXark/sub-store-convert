@@ -4,7 +4,9 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "start": "node server.js",
+    "start": "bun ./server.js || node ./server.js",
+    "start:bun": "bun ./server.js",
+    "start:node": "node ./server.js",
     "deploy": "wrangler deploy"
   },
   "dependencies": {
