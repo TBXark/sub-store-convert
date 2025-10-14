@@ -8,26 +8,23 @@ importers:
 
   .:
     devDependencies:
-      bun:
-        specifier: ^1.3.0
-        version: 1.3.0
       esbuild:
-        specifier: ^0.25.0
+        specifier: ^0.25.10
         version: 0.25.10
       wrangler:
-        specifier: ^3.87.0
+        specifier: ^3.114.15
         version: 3.114.15
 
   packages/app:
     dependencies:
       '@hono/node-server':
-        specifier: ^1.12.0
+        specifier: ^1.19.5
         version: 1.19.5(hono@4.9.10)
       '@sub-store/core':
         specifier: workspace:*
         version: link:../core
       hono:
-        specifier: ^4.5.1
+        specifier: ^4.9.10
         version: 4.9.10
 
   packages/core:
@@ -39,7 +36,7 @@ importers:
         specifier: ^9.0.5
         version: 9.0.5
       js-base64:
-        specifier: ^3.7.7
+        specifier: ^3.7.8
         version: 3.7.8
       json5:
         specifier: ^2.2.3
@@ -48,7 +45,7 @@ importers:
         specifier: ^4.17.21
         version: 4.17.21
       peggy:
-        specifier: ^4.0.3
+        specifier: ^4.2.0
         version: 4.2.0
       static-js-yaml:
         specifier: ^1.0.0
@@ -529,61 +526,6 @@ packages:
   '@jridgewell/trace-mapping@0.3.9':
     resolution: {integrity: sha512-3Belt6tdc8bPgAtbcmdtNJlirVoTmEb5e2gC94PnkwEW9jI6CAHUeoG85tjWP5WquqfavoMtMwiG4P926ZKKuQ==}
 
-  '@oven/bun-darwin-aarch64@1.3.0':
-    resolution: {integrity: sha512-WeXSaL29ylJEZMYHHW28QZ6rgAbxQ1KuNSZD9gvd3fPlo0s6s2PglvPArjjP07nmvIK9m4OffN0k4M98O7WmAg==}
-    cpu: [arm64]
-    os: [darwin]
-
-  '@oven/bun-darwin-x64-baseline@1.3.0':
-    resolution: {integrity: sha512-+FSr/ub5vA/EkD3fMhHJUzYioSf/sXd50OGxNDAntVxcDu4tXL/81Ka3R/gkZmjznpLFIzovU/1Ts+b7dlkrfw==}
-    cpu: [x64]
-    os: [darwin]
-
-  '@oven/bun-darwin-x64@1.3.0':
-    resolution: {integrity: sha512-CFKjoUWQH0Oz3UHYfKbdKLq0wGryrFsTJEYq839qAwHQSECvVZYAnxVVDYUDa0yQFonhO2qSHY41f6HK+b7xtw==}
-    cpu: [x64]
-    os: [darwin]
-
-  '@oven/bun-linux-aarch64-musl@1.3.0':
-    resolution: {integrity: sha512-HT5sr7N8NDYbQRjAnT7ISpx64y+ewZZRQozOJb0+KQObKvg4UUNXGm4Pn1xA4/WPMZDDazjO8E2vtOQw1nJlAQ==}
-    cpu: [arm64]
-    os: [linux]
-
-  '@oven/bun-linux-aarch64@1.3.0':
-    resolution: {integrity: sha512-WHthS/eLkCNcp9pk4W8aubRl9fIUgt2XhHyLrP0GClB1FVvmodu/zIOtG0NXNpzlzB8+gglOkGo4dPjfVf4Z+g==}
-    cpu: [arm64]
-    os: [linux]
-
-  '@oven/bun-linux-x64-baseline@1.3.0':
-    resolution: {integrity: sha512-OmlEH3nlxQyv7HOvTH21vyNAZGv9DIPnrTznzvKiOQxkOphhCyKvPTlF13ydw4s/i18iwaUrhHy+YG9HSSxa4Q==}
-    cpu: [x64]
-    os: [linux]
-
-  '@oven/bun-linux-x64-musl-baseline@1.3.0':
-    resolution: {integrity: sha512-hrr7mDvUjMX1tuJaXz448tMsgKIqGJBY8+rJqztKOw1U5+a/v2w5HuIIW1ce7ut0ZwEn+KIDvAujlPvpH33vpQ==}
-    cpu: [x64]
-    os: [linux]
-
-  '@oven/bun-linux-x64-musl@1.3.0':
-    resolution: {integrity: sha512-rtzUEzCynl3Rhgn/iR9DQezSFiZMcAXAbU+xfROqsweMGKwvwIA2ckyyckO08psEP8XcUZTs3LT9CH7PnaMiEA==}
-    cpu: [x64]
-    os: [linux]
-
-  '@oven/bun-linux-x64@1.3.0':
-    resolution: {integrity: sha512-sGEWoJQXO4GDr0x4t/yJQ/Bq1yNkOdX9tHbZZ+DBGJt3z3r7jeb4Digv8xQUk6gdTFC9vnGHuin+KW3/yD1Aww==}
-    cpu: [x64]
-    os: [linux]
-
-  '@oven/bun-windows-x64-baseline@1.3.0':
-    resolution: {integrity: sha512-/jVZ8eYjpYHLDFNoT86cP+AjuWvpkzFY+0R0a1bdeu0sQ6ILuy1FV6hz1hUAP390E09VCo5oP76fnx29giHTtA==}
-    cpu: [x64]
-    os: [win32]
-
-  '@oven/bun-windows-x64@1.3.0':
-    resolution: {integrity: sha512-xXwtpZVVP7T+vkxcF/TUVVOGRjEfkByO4mKveKYb4xnHWV4u4NnV0oNmzyMKkvmj10to5j2h0oZxA4ZVVv4gfA==}
-    cpu: [x64]
-    os: [win32]
-
   '@peggyjs/from-mem@1.3.5':
     resolution: {integrity: sha512-oRyzXE7nirAn+5yYjCdWQHg3EG2XXcYRoYNOK8Quqnmm+9FyK/2YWVunwudlYl++M3xY+gIAdf0vAYS+p0nKfQ==}
     engines: {node: '>=18'}
@@ -620,12 +562,6 @@ packages:
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
-
-  bun@1.3.0:
-    resolution: {integrity: sha512-YI7mFs7iWc/VsGsh2aw6eAPD2cjzn1j+LKdYVk09x1CrdTWKYIHyd+dG5iQoN9//3hCDoZj8U6vKpZzEf5UARA==}
-    cpu: [arm64, x64]
-    os: [darwin, linux, win32]
-    hasBin: true
 
   color-convert@2.0.1:
     resolution: {integrity: sha512-RRECPsj7iu/xb5oKYcsFHSppFNnsj/52OVTRKb4zP5onXwVF3zVmmToNcOfGC+CRDpfK/U584fMg38ZHCaElKQ==}
@@ -896,6 +832,10 @@ packages:
   source-map@0.6.1:
     resolution: {integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==}
     engines: {node: '>=0.10.0'}
+
+  source-map@0.7.6:
+    resolution: {integrity: sha512-i5uvt8C3ikiWeNZSVZNWcfZPItFQOsYTUAOkcUPGd8DqDy1uOUikjt5dG+uRlwyvR108Fb9DOd4GvXfT0N2/uQ==}
+    engines: {node: '>= 12'}
 
   sourcemap-codec@1.4.8:
     resolution: {integrity: sha512-9NykojV5Uih4lgo5So5dtw+f0JgJX30KCNI8gwhz2J9A15wD0Ml6tjHKwf6fTSa6fAdVBdZeNOs9eJ71qCk8vA==}
@@ -1290,39 +1230,6 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
 
-  '@oven/bun-darwin-aarch64@1.3.0':
-    optional: true
-
-  '@oven/bun-darwin-x64-baseline@1.3.0':
-    optional: true
-
-  '@oven/bun-darwin-x64@1.3.0':
-    optional: true
-
-  '@oven/bun-linux-aarch64-musl@1.3.0':
-    optional: true
-
-  '@oven/bun-linux-aarch64@1.3.0':
-    optional: true
-
-  '@oven/bun-linux-x64-baseline@1.3.0':
-    optional: true
-
-  '@oven/bun-linux-x64-musl-baseline@1.3.0':
-    optional: true
-
-  '@oven/bun-linux-x64-musl@1.3.0':
-    optional: true
-
-  '@oven/bun-linux-x64@1.3.0':
-    optional: true
-
-  '@oven/bun-windows-x64-baseline@1.3.0':
-    optional: true
-
-  '@oven/bun-windows-x64@1.3.0':
-    optional: true
-
   '@peggyjs/from-mem@1.3.5':
     dependencies:
       semver: 7.6.3
@@ -1354,20 +1261,6 @@ snapshots:
   blake3-wasm@2.1.5: {}
 
   buffer-from@1.1.2: {}
-
-  bun@1.3.0:
-    optionalDependencies:
-      '@oven/bun-darwin-aarch64': 1.3.0
-      '@oven/bun-darwin-x64': 1.3.0
-      '@oven/bun-darwin-x64-baseline': 1.3.0
-      '@oven/bun-linux-aarch64': 1.3.0
-      '@oven/bun-linux-aarch64-musl': 1.3.0
-      '@oven/bun-linux-x64': 1.3.0
-      '@oven/bun-linux-x64-baseline': 1.3.0
-      '@oven/bun-linux-x64-musl': 1.3.0
-      '@oven/bun-linux-x64-musl-baseline': 1.3.0
-      '@oven/bun-windows-x64': 1.3.0
-      '@oven/bun-windows-x64-baseline': 1.3.0
 
   color-convert@2.0.1:
     dependencies:
@@ -1474,7 +1367,7 @@ snapshots:
       esprima: 1.0.4
       estraverse: 1.3.2
     optionalDependencies:
-      source-map: 0.6.1
+      source-map: 0.7.6
 
   escodegen@1.3.3:
     dependencies:
@@ -1691,6 +1584,9 @@ snapshots:
     optional: true
 
   source-map@0.6.1: {}
+
+  source-map@0.7.6:
+    optional: true
 
   sourcemap-codec@1.4.8: {}
 

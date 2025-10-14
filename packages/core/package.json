@@ -18,12 +18,12 @@
     "build"
   ],
   "dependencies": {
+    "automerge": "0.14.2",
     "ip-address": "^9.0.5",
-    "js-base64": "^3.7.7",
-    "lodash": "^4.17.21",
-    "peggy": "^4.0.3",
+    "js-base64": "^3.7.8",
     "json5": "^2.2.3",
-    "static-js-yaml": "^1.0.0",
-    "automerge": "0.14.2"
+    "lodash": "^4.17.21",
+    "peggy": "^4.2.0",
+    "static-js-yaml": "^1.0.0"
   }
 }

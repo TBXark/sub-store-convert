@@ -4,12 +4,12 @@
   "type": "module",
   "license": "MIT",
   "scripts": {
-    "start": "bun server.js",
+    "start": "node server.js",
     "deploy": "wrangler deploy"
   },
   "dependencies": {
-    "@hono/node-server": "^1.12.0",
-    "hono": "^4.5.1",
-    "@sub-store/core": "workspace:*"
+    "@hono/node-server": "^1.19.5",
+    "@sub-store/core": "workspace:*",
+    "hono": "^4.9.10"
   }
 }

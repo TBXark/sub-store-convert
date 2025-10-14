@@ -45,10 +45,14 @@ async function convert(url, target, opts) {
                 if (p.test(line)) {
                     try {
                         const proxy = p.parse(line)
-                        proxyList.push({
+                        const srv = {
                             ...proxy,
                             ...opts
-                        })
+                        }
+                        if (srv.name) {
+                            srv.name = srv.name.trim()
+                        }
+                        proxyList.push(srv)
                     } catch (e) {
                         console.error(e)
                     }
