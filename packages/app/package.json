@@ -13,6 +13,7 @@
   "dependencies": {
     "@hono/node-server": "^1.19.5",
     "@sub-store-convert/core": "workspace:*",
-    "hono": "^4.9.10"
+    "hono": "^4.9.10",
+    "wrangler": "^3.114.15"
   }
 }

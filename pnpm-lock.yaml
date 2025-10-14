@@ -6,14 +6,7 @@ settings:
 
 importers:
 
-  .:
-    devDependencies:
-      esbuild:
-        specifier: ^0.25.10
-        version: 0.25.10
-      wrangler:
-        specifier: ^3.114.15
-        version: 3.114.15
+  .: {}
 
   packages/app:
     dependencies:
@@ -26,6 +19,9 @@ importers:
       hono:
         specifier: ^4.9.10
         version: 4.9.10
+      wrangler:
+        specifier: ^3.114.15
+        version: 3.114.15
 
   packages/core:
     dependencies:
@@ -50,6 +46,10 @@ importers:
       static-js-yaml:
         specifier: ^1.0.0
         version: 1.0.0
+    devDependencies:
+      esbuild:
+        specifier: ^0.25.10
+        version: 0.25.10
 
 packages:
 

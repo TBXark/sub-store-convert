@@ -20,3 +20,15 @@ esbuild.build({
     '@/core/app': './src/core/app'
   },
 }).catch(() => process.exit(1))
+
+const packageJson = {
+  ...(JSON.parse(fs.readFileSync('./package.json').toString())),
+  "name": "sub-store-convert",
+  "module": "./index.js",
+  "main": "./index.js",
+  "files": [
+    "index.js",
+  ]
+}
+delete packageJson.scripts
+fs.writeFileSync('./build/package.json', JSON.stringify(packageJson, null, 2))

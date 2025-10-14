@@ -1,16 +1,7 @@
 {
   "name": "sub-store-convert",
-  "version": "2.20.29",
-  "module": "./packages/core/build/index.js",
-  "license": "MIT",
-  "exports": {
-    ".": {
-      "import": "./packages/core/build/index.js"
-    }
-  },
-  "files": [
-    "packages/core/build"
-  ],
+  "version": "2.20.30",
+  "private": true,
   "scripts": {
     "build:core": "pnpm --filter @sub-store-convert/core build",
     "build:docker": "docker build -t ghcr.io/tbxark/sub-store-convert:latest .",
@@ -19,10 +10,7 @@
     "start:node": "pnpm --filter @sub-store-convert/app start:node",
     "start:docker": "docker run --rm --name sub-store-convert -p 3000:3000 ghcr.io/tbxark/sub-store-convert:latest",
     "deploy": "pnpm --filter @sub-store-convert/app deploy",
-    "clean": "pnpm -r clean && rm -rf node_modules"
-  },
-  "devDependencies": {
-    "esbuild": "^0.25.10",
-    "wrangler": "^3.114.15"
+    "clean": "pnpm -r clean && rm -rf node_modules",
+    "publish": "pnpm --filter @sub-store-convert/core publish"
   }
 }
