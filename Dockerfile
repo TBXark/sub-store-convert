@@ -16,7 +16,7 @@ RUN pnpm install --frozen-lockfile
 
 COPY packages ./packages
 
-RUN pnpm --filter @sub-store/core build
+RUN pnpm run build:core
 
 FROM oven/bun:1-alpine
 
