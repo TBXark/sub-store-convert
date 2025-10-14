@@ -1,5 +1,5 @@
 import { Hono } from 'hono'
-import { parsers, produce } from "@sub-store/core"
+import { parsers, produce } from "@sub-store-convert/core"
 
 const app = new Hono()
 

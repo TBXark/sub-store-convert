@@ -12,13 +12,14 @@
     "packages/core/build"
   ],
   "scripts": {
-    "build": "pnpm --filter @sub-store/core build",
+    "build": "pnpm --filter @sub-store-convert/core build",
     "build:docker": "docker build -t ghcr.io/tbxark/sub-store-convert:latest .",
-    "start": "pnpm --filter @sub-store/app start",
-    "start:bun": "pnpm --filter @sub-store/app start:bun",
-    "start:node": "pnpm --filter @sub-store/app start:node",
+    "start": "pnpm --filter @sub-store-convert/app start",
+    "start:bun": "pnpm --filter @sub-store-convert/app start:bun",
+    "start:node": "pnpm --filter @sub-store-convert/app start:node",
     "start:docker": "docker run --rm --name sub-store-convert -p 3000:3000 ghcr.io/tbxark/sub-store-convert:latest",
-    "deploy": "pnpm --filter @sub-store/app deploy"
+    "deploy": "pnpm --filter @sub-store-convert/app deploy",
+    "clean": "pnpm -r clean && rm -rf node_modules"
   },
   "devDependencies": {
     "esbuild": "^0.25.10",

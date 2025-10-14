@@ -20,7 +20,7 @@ importers:
       '@hono/node-server':
         specifier: ^1.19.5
         version: 1.19.5(hono@4.9.10)
-      '@sub-store/core':
+      '@sub-store-convert/core':
         specifier: workspace:*
         version: link:../core
       hono:

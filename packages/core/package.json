@@ -1,5 +1,5 @@
 {
-  "name": "@sub-store/core",
+  "name": "@sub-store-convert/core",
   "version": "2.20.29",
   "description": "Advanced Subscription Converter for QX, Loon, Surge, Stash and ShadowRocket.",
   "module": "./build/index.js",
@@ -12,7 +12,8 @@
     }
   },
   "scripts": {
-    "build": "node esbuild.config.js"
+    "build": "node esbuild.config.js",
+    "clean": "rm -rf node_modules/ build/"
   },
   "files": [
     "build"

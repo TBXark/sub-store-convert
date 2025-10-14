@@ -1,5 +1,5 @@
 {
-  "name": "@sub-store/app",
+  "name": "@sub-store-convert/app",
   "version": "1.0.0",
   "type": "module",
   "license": "MIT",
@@ -7,11 +7,12 @@
     "start": "bun ./server.js || node ./server.js",
     "start:bun": "bun ./server.js",
     "start:node": "node ./server.js",
-    "deploy": "wrangler deploy"
+    "deploy": "wrangler deploy",
+    "clean": "rm -rf node_modules/"
   },
   "dependencies": {
     "@hono/node-server": "^1.19.5",
-    "@sub-store/core": "workspace:*",
+    "@sub-store-convert/core": "workspace:*",
     "hono": "^4.9.10"
   }
 }
