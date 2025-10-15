@@ -1,10 +1,10 @@
 # sub-workers
  
-This is a subscription conversion service driven by [sub-store-convert](https://github.com/TBXark/sub-store-convert) and compatible with the [subconverter](https://github.com/tindy2013/subconverter) API, running on Cloudflare Worker.
+This is a subscription conversion service driven by [sub-store-convert](https://github.com/TBXark/sub-store-convert) and compatible with the [subconverter](https://github.com/tindy2013/subconverter) API, running on Cloudflare Worker or other serverless platforms.
 
 ## Deploy
 ```shell
-yarn && yarn run deploy
+pnpm deploy
 ```
 
 ## Example
@@ -18,6 +18,3 @@ requests.get(
     },
 )
 ```
-
-## LICENSE
-**sub-workers** is licensed under the MIT License. See the [LICENSE](LICENSE) file for more information.

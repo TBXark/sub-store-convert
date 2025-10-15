@@ -28,9 +28,6 @@ importers:
       automerge:
         specifier: 0.14.2
         version: 0.14.2
-      ip-address:
-        specifier: ^9.0.5
-        version: 9.0.5
       js-base64:
         specifier: ^3.7.8
         version: 3.7.8
@@ -50,6 +47,9 @@ importers:
       esbuild:
         specifier: ^0.25.10
         version: 0.25.10
+      ip-address:
+        specifier: ^9.0.5
+        version: 9.0.5
 
 packages:
 
