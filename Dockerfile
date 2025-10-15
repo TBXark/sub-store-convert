@@ -33,4 +33,4 @@ COPY --from=build /app/packages ./packages
 
 EXPOSE 3000
 
-CMD ["bun", "./packages/app/server.js"]
+CMD ["bun", "./packages/app/src/server.js"]

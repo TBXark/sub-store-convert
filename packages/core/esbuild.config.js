@@ -1,6 +1,12 @@
 import esbuild from 'esbuild';
 import fs from 'node:fs';
 import process from 'node:process';
+import alias from 'esbuild-plugin-alias'
+import path from 'node:path';
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 const dependenciesLoader = (path) => (
   Object.keys(JSON.parse(fs.readFileSync(path).toString()).dependencies)
@@ -20,24 +26,6 @@ const createPackageJsonPlugin = ({source, target, extra}) => ({
   }
 })
 
-export function createIgnorePackagesPlugin(pkgs = []) {
-  const escape = s => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-  const re = pkgs.length
-    ? new RegExp(`^(?:${pkgs.map(escape).join('|')})(?:\\/.*)?$`)
-    : null;
-  return {
-    name: 'ignore-packages-simple',
-    setup(build) {
-      if (!re) return;
-      build.onResolve({ filter: re }, args => ({ path: args.path, namespace: 'ignored' }));
-      build.onLoad({ filter: /.*/, namespace: 'ignored' }, () => ({
-        contents: 'export default {}; export const __ignored__ = {};',
-        loader: 'js'
-      }));
-    }
-  };
-}
-
 esbuild.build({
   entryPoints: ['src/index.js'],
   target: 'esnext',
@@ -50,7 +38,7 @@ esbuild.build({
     ...dependenciesLoader('./package.json')
   ],
   alias: {
-    '@/core/app': './src/core/app'
+    '@/core/app': './src/core/app',
   },
   plugins: [
     createPackageJsonPlugin({
@@ -66,9 +54,10 @@ esbuild.build({
         "devDependencies": {},
       }
     }),
-    createIgnorePackagesPlugin([
-      'ip-address',
-    ])
+    alias({
+      'automerge': path.resolve(__dirname, 'src/pkg/automerge/index.js'),
+      'ip-address': path.resolve(__dirname, 'src/pkg/ip-address/index.js'),
+    })
   ],
 }).catch(() => process.exit(1))
 
