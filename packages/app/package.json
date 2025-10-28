@@ -16,8 +16,8 @@
   "dependencies": {
     "@hono/node-server": "^1.19.5",
     "@sub-store-convert/core": "workspace:*",
+    "esbuild": "^0.25.11",
     "hono": "^4.10.3",
-    "wrangler": "^4.43.0p",
-    "esbuild": "^0.25.10"
+    "wrangler": "^4.45.1"
   }
 }
