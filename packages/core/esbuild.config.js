@@ -21,6 +21,7 @@ const createPackageJsonPlugin = ({source, target, extra}) => ({
         ...extra
       }
       delete packageJson.scripts
+      delete packageJson.exports
       fs.writeFileSync(target, JSON.stringify(packageJson, null, 2))
     })
   }

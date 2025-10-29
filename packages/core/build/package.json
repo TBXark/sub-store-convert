@@ -5,11 +5,6 @@
   "type": "module",
   "module": "./index.js",
   "license": "MIT",
-  "exports": {
-    ".": {
-      "import": "./build/index.js"
-    }
-  },
   "files": [
     "index.js"
   ],
