@@ -2559,8 +2559,8 @@ var grammars2 = String.raw`
             case "chrome":
             case "chrome147":
                 return "chrome";
-            case "ios18":
-            case "ios26":
+            case "safari-ios18":
+            case "safari-ios-26":
                 return "ios";
         }
     }
@@ -8787,14 +8787,26 @@ function getLoonAlpn(proxy) {
 }
 function getLoonTlsProfile(proxy) {
   const tlsProfile = `${proxy._loon_tls_profile || ""}`.trim();
-  if (["default", "chrome", "chrome147", "ios18", "ios26"].includes(tlsProfile)) {
+  if ([
+    "global",
+    "default",
+    "safari-ios18",
+    "safari-ios-26",
+    "chrome",
+    "chrome147"
+  ].includes(tlsProfile)) {
     return tlsProfile;
   }
-  switch (`${proxy["client-fingerprint"] || ""}`.trim()) {
+  const fingerprint = `${proxy["client-fingerprint"] || ""}`.trim();
+  if (proxy["reality-opts"]?.["support-x25519mlkem768"]) {
+    return ["safari", "ios"].includes(fingerprint) ? "safari-ios-26" : "chrome147";
+  }
+  switch (fingerprint) {
     case "chrome":
-      return "chrome147";
+      return "chrome";
+    case "safari":
     case "ios":
-      return "ios26";
+      return "safari-ios18";
   }
 }
 function shadowsocks2(proxy) {
